@@ -1,0 +1,56 @@
+[
+    {
+        "model": "danflashesapi.Pattern",
+        "pk": "1",
+        "fields": {
+            "pattern_url_a": "http://www.fakeurla.com",
+            "pattern_url_b": "http://www.fakeurlb.com",
+            "label": "Fake Pattern A"
+        }
+    },
+    {
+        "model": "danflashesapi.Pattern",
+        "pk": "2",
+        "fields": {
+            "pattern_url_a": "http://www.fakeurlc.com",
+            "pattern_url_b": "http://www.fakeurld.com",
+            "label": "Fake Pattern B"
+        }
+    },
+    {
+        "model": "danflashesapi.Pattern",
+        "pk": "3",
+        "fields": {
+            "pattern_url_a": "http://www.fakeurle.com",
+            "pattern_url_b": "http://www.fakeurlf.com",
+            "label": "Fake Pattern C"
+        }
+    },
+    {
+        "model": "danflashesapi.Pattern",
+        "pk": "4",
+        "fields": {
+            "pattern_url_a": "http://www.fakeurlg.com",
+            "pattern_url_b": "http://www.fakeurlh.com",
+            "label": "Fake Pattern D"
+        }
+    },
+    {
+        "model": "danflashesapi.Pattern",
+        "pk": "5",
+        "fields": {
+            "pattern_url_a": "http://www.fakeurli.com",
+            "pattern_url_b": "http://www.fakeurlj.com",
+            "label": "Fake Pattern E"
+        }
+    },
+    {
+        "model": "danflashesapi.Pattern",
+        "pk": "6",
+        "fields": {
+            "pattern_url_a": "http://www.fakeurlk.com",
+            "pattern_url_b": "http://www.fakeurll.com",
+            "label": "Fake Pattern F"
+        }
+    }
+]
