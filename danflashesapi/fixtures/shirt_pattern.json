@@ -1,0 +1,29 @@
+[
+    {
+        "model": "danflashesapi.shirtpattern",
+        "pk": 1,
+        "fields": {
+            "shirt_id": 1,
+            "pattern_id": 1,
+            "pattern_index": 1
+        }
+    },
+    {
+        "model": "danflashesapi.shirtpattern",
+        "pk": 2,
+        "fields": {
+            "shirt_id": 1,
+            "pattern_id": 2,
+            "pattern_index": 2
+        }
+    },
+    {
+        "model": "danflashesapi.shirtpattern",
+        "pk": 3,
+        "fields": {
+            "shirt_id": 1,
+            "pattern_id": 4,
+            "pattern_index": 3
+        }
+    }
+]
