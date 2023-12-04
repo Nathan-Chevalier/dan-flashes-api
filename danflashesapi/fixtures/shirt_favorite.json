@@ -1,0 +1,10 @@
+[
+    {
+        "model": "danflashesapi.shirtfavorite",
+        "pk": 1,
+        "fields": {
+            "shirt_id": 1,
+            "flashes_user_id": 1
+        }
+    }
+]
