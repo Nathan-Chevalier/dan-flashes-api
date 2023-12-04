@@ -1,0 +1,50 @@
+[
+    {
+        "model": "danflashesapi.Color",
+        "pk": 1,
+        "fields": {
+            "color": "#0b0b0b",
+            "label": "Black"
+        }
+    },
+    {
+        "model": "danflashesapi.Color",
+        "pk": 2,
+        "fields": {
+            "color": "#f0ead6",
+            "label": "Eggshell"
+        }
+    },
+    {
+        "model": "danflashesapi.Color",
+        "pk": 3,
+        "fields": {
+            "color": "#00519d",
+            "label": "Blue"
+        }
+    },
+    {
+        "model": "danflashesapi.Color",
+        "pk": 4,
+        "fields": {
+            "color": "#9d4a00",
+            "label": "Orange"
+        }
+    },
+    {
+        "model": "danflashesapi.Color",
+        "pk": 5,
+        "fields": {
+            "color": "#9d0089",
+            "label": "Pink"
+        }
+    },
+    {
+        "model": "danflashesapi.Color",
+        "pk": 6,
+        "fields": {
+            "color": "#742622",
+            "label": "Red"
+        }
+    }
+]
