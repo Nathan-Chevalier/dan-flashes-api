@@ -1,0 +1,11 @@
+[
+    {
+        "model": "danflashesapi.flashesuser",
+        "pk": 1,
+        "fields": {
+            "flashes_name": "Dan Flashes",
+            "profile_image_url": "https://pyxis.nymag.com/v1/imgs/87b/fe6/0a5b70ea95dfbf887c84c0f5890144ae7b-dan-flashes.jpg",
+            "user_id": 1
+        }
+    }
+]
