@@ -1,2 +1,2 @@
 from .auth import login_user, register_user
-from .user import FlashesUserView
+from .users import FlashesUserView
