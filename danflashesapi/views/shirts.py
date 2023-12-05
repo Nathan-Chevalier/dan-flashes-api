@@ -1,8 +1,7 @@
 from rest_framework import serializers, status
 from rest_framework.response import Response
 from rest_framework.viewsets import ViewSet
-from danflashesapi.models import FlashesUser, Shirt, Pattern, ShirtPattern, ShirtFavorite, Color
-from django.contrib.auth.models import User
+from danflashesapi.models import FlashesUser, Shirt, Pattern, ShirtPattern, Color
 
 class ColorSerializer(serializers.ModelSerializer):
     class Meta:
@@ -50,6 +49,6 @@ class ShirtView(ViewSet):
         shirt_serializer = ShirtSerializer(shirts, many=True, context={'request':request})
 
         for shirt_data in shirt_serializer.data:
-            shirt_data['shirt_pattern'] = sorted(shirt_data['shirt_pattern'], key=sort_pattern_by_index)        
+            shirt_data['shirt_pattern'] = sorted(shirt_data['shirt_pattern'], key=sort_pattern_by_index)
 
         return Response(shirt_serializer.data, status=status.HTTP_200_OK)        
