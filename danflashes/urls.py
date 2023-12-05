@@ -2,11 +2,12 @@ from django.contrib import admin
 from rest_framework.routers import DefaultRouter
 from django.conf.urls import include
 from django.urls import path
-from danflashesapi.views import register_user, login_user, FlashesUserView
+from danflashesapi.views import register_user, login_user, FlashesUserView, ShirtView
 
 
 router = DefaultRouter(trailing_slash=False)
 router.register(r'users', FlashesUserView, 'user')
+router.register(r'shirts', ShirtView, 'shirt')
 
 urlpatterns = [
     path('register', register_user),
