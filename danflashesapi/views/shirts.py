@@ -23,7 +23,7 @@ class ShirtPatternSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ShirtPattern
-        fields = ('pattern','pattern_index',)
+        fields = ('id','pattern','pattern_index',)
 
 class ShirtSerializer(serializers.ModelSerializer):
     shirt_pattern = ShirtPatternSerializer(many=True)
@@ -37,7 +37,6 @@ class ShirtSerializer(serializers.ModelSerializer):
     class Meta:
         model = Shirt
         fields = ('id','shirt_pattern', 'flashes_user', 'color', 'label', 'public', 'price', 'favorites', 'is_owner')
-
 
 class ShirtView(ViewSet):
     def list(self, request):
@@ -77,3 +76,30 @@ class ShirtView(ViewSet):
         
         serializer = ShirtSerializer(shirt, context={'request': request})
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+    
+    def update(self, request, pk=None):
+        try:
+            shirt = Shirt.objects.get(pk=pk)
+            shirt.color_id = request.data.get('color')
+            shirt.label = request.data.get('label')
+            shirt.public = request.data.get('public')
+            shirt.price = request.data.get('price')
+            shirt.save()
+            #? Pull the join tables associated with the shirt patterns and delete them
+            old_patterns = ShirtPattern.objects.filter(shirt__id=shirt.id)
+            old_patterns.delete()
+            #? Get the patterns dictionaries from the payload
+            patterns_data = request.data.get('patterns', [])
+            #? Extract the pattern_id foreign keys to associate with the shirt and set them
+            pattern_ids = [pattern.get('pattern_id') for pattern in patterns_data]
+            shirt.patterns.set(pattern_ids)
+            #? Loop through the pattern dictionaries to pull pattern_index and associate it with the correct entry on the ShirtPattern join table.
+            for pattern in patterns_data:
+                shirt_pattern = ShirtPattern.objects.get(shirt__id=shirt.id, pattern__id=pattern['pattern_id'])
+                index = pattern['pattern_index']
+                shirt_pattern.pattern_index = index
+                shirt_pattern.save()
+            
+            return Response(None, status=status.HTTP_204_NO_CONTENT)
+        except Shirt.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
