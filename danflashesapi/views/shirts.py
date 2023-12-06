@@ -63,13 +63,17 @@ class ShirtView(ViewSet):
         shirt.price = request.data.get('price')
         shirt.flashes_user = FlashesUser.objects.get(user=request.auth.user)
         shirt.save()
+        #? Get the patterns dictionaries
         patterns_data = request.data.get('patterns', [])
+        #? Extract the pattern_id foreign keys to associate with the shirt and set them
         pattern_ids = [pattern.get('pattern_id') for pattern in patterns_data]
         shirt.patterns.set(pattern_ids)
+        #? Loop through the pattern dictionaries to pull pattern_index and associate it with the correct entry on the ShirtPattern join table.
         for pattern in patterns_data:
             shirt_pattern = ShirtPattern.objects.get(shirt__id=shirt.id, pattern__id=pattern['pattern_id'])
             index = pattern['pattern_index']
-            shirt_pattern.pattern_index.set(index)
+            shirt_pattern.pattern_index = index
+            shirt_pattern.save()
         
         serializer = ShirtSerializer(shirt, context={'request': request})
         return Response(serializer.data, status=status.HTTP_201_CREATED)
