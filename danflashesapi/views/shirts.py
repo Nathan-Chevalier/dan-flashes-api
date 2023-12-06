@@ -103,3 +103,15 @@ class ShirtView(ViewSet):
             return Response(None, status=status.HTTP_204_NO_CONTENT)
         except Shirt.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
+        
+    def destroy(self, request, pk=None):
+        try:
+            shirt = Shirt.objects.get(pk=pk)
+            #? Grab all shirt patterns associated with this shirt for deletion
+
+            shirt.delete()
+
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        
+        except Shirt.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
