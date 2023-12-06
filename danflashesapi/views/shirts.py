@@ -43,12 +43,33 @@ class ShirtView(ViewSet):
     def list(self, request):
         shirts = Shirt.objects.all()
 
+        #? Helper function to sort the shirt_pattern list of dictionaries by pattern_index in the serialized return
         def sort_pattern_by_index(pattern):
             return pattern['pattern_index']
 
         shirt_serializer = ShirtSerializer(shirts, many=True, context={'request':request})
 
+        #? Uses the helper function to sort
         for shirt_data in shirt_serializer.data:
             shirt_data['shirt_pattern'] = sorted(shirt_data['shirt_pattern'], key=sort_pattern_by_index)
 
-        return Response(shirt_serializer.data, status=status.HTTP_200_OK)        
+        return Response(shirt_serializer.data, status=status.HTTP_200_OK)
+    
+    def create(self, request):
+        shirt = Shirt()
+        shirt.color_id = request.data.get('color')
+        shirt.label = request.data.get('label')
+        shirt.public = request.data.get('public')
+        shirt.price = request.data.get('price')
+        shirt.flashes_user = FlashesUser.objects.get(user=request.auth.user)
+        shirt.save()
+        patterns_data = request.data.get('patterns', [])
+        pattern_ids = [pattern.get('pattern_id') for pattern in patterns_data]
+        shirt.patterns.set(pattern_ids)
+        for pattern in patterns_data:
+            shirt_pattern = ShirtPattern.objects.get(shirt__id=shirt.id, pattern__id=pattern['pattern_id'])
+            index = pattern['pattern_index']
+            shirt_pattern.pattern_index.set(index)
+        
+        serializer = ShirtSerializer(shirt, context={'request': request})
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
