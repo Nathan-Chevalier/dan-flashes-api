@@ -85,9 +85,10 @@ class ShirtView(ViewSet):
             shirt.public = request.data.get('public')
             shirt.price = request.data.get('price')
             shirt.save()
+            #? Pull the join tables associated with the shirt patterns and delete them
             old_patterns = ShirtPattern.objects.filter(shirt__id=shirt.id)
             old_patterns.delete()
-            #? Get the patterns dictionaries
+            #? Get the patterns dictionaries from the payload
             patterns_data = request.data.get('patterns', [])
             #? Extract the pattern_id foreign keys to associate with the shirt and set them
             pattern_ids = [pattern.get('pattern_id') for pattern in patterns_data]
