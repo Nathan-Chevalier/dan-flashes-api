@@ -16,7 +16,7 @@ class FlashesUserSerializer(serializers.ModelSerializer):
 class PatternSerializer(serializers.ModelSerializer):
     class Meta:
         model = Pattern
-        fields = ('id', 'pattern_url_a', 'pattern_url_b', 'label',)
+        fields = ('id', 'pattern_url_a', 'pattern_url_b','pattern_preview', 'label',)
 
 class ShirtPatternSerializer(serializers.ModelSerializer):
     pattern = PatternSerializer(many=False)
