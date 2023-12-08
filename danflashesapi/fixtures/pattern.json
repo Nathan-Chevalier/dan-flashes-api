@@ -5,7 +5,8 @@
         "fields": {
             "pattern_url_a": "http://www.fakeurla.com",
             "pattern_url_b": "http://www.fakeurlb.com",
-            "label": "Fake Pattern A"
+            "label": "Fake Pattern A",
+            "pattern_preview": "http://www.patternpreview.com"
         }
     },
     {
@@ -14,7 +15,8 @@
         "fields": {
             "pattern_url_a": "http://www.fakeurlc.com",
             "pattern_url_b": "http://www.fakeurld.com",
-            "label": "Fake Pattern B"
+            "label": "Fake Pattern B",
+            "pattern_preview": "http://www.patternpreview.com"
         }
     },
     {
@@ -23,7 +25,8 @@
         "fields": {
             "pattern_url_a": "http://www.fakeurle.com",
             "pattern_url_b": "http://www.fakeurlf.com",
-            "label": "Fake Pattern C"
+            "label": "Fake Pattern C",
+            "pattern_preview": "http://www.patternpreview.com"
         }
     },
     {
@@ -32,7 +35,8 @@
         "fields": {
             "pattern_url_a": "http://www.fakeurlg.com",
             "pattern_url_b": "http://www.fakeurlh.com",
-            "label": "Fake Pattern D"
+            "label": "Fake Pattern D",
+            "pattern_preview": "http://www.patternpreview.com"
         }
     },
     {
@@ -41,7 +45,8 @@
         "fields": {
             "pattern_url_a": "http://www.fakeurli.com",
             "pattern_url_b": "http://www.fakeurlj.com",
-            "label": "Fake Pattern E"
+            "label": "Fake Pattern E",
+            "pattern_preview": "http://www.patternpreview.com"
         }
     },
     {
@@ -50,7 +55,8 @@
         "fields": {
             "pattern_url_a": "http://www.fakeurlk.com",
             "pattern_url_b": "http://www.fakeurll.com",
-            "label": "Fake Pattern F"
+            "label": "Fake Pattern F",
+            "pattern_preview": "http://www.patternpreview.com"
         }
     }
 ]
