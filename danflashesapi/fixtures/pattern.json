@@ -14,9 +14,49 @@
         "pk": "2",
         "fields": {
             "pattern_url_a": "https://i.imgur.com/iIVkTpl.png",
-            "pattern_url_b": "hhttps://i.imgur.com/BvGK5Jq.png",
+            "pattern_url_b": "https://i.imgur.com/BvGK5Jq.png",
             "label": "Test Pentagonal",
             "pattern_preview": "https://i.imgur.com/LphEn95.png"
+        }
+    },
+    {
+        "model": "danflashesapi.Pattern",
+        "pk": "3",
+        "fields": {
+            "pattern_url_a": "https://i.imgur.com/7FW2Tjn.png",
+            "pattern_url_b": "https://i.imgur.com/p9D4TMO.png",
+            "label": "Test Rectangles",
+            "pattern_preview": "https://i.imgur.com/8K6TiGS.png"
+        }
+    },
+    {
+        "model": "danflashesapi.Pattern",
+        "pk": "4",
+        "fields": {
+            "pattern_url_a": "https://i.imgur.com/gDMLpql.png",
+            "pattern_url_b": "https://i.imgur.com/pTL269J.png",
+            "label": "Test Triangles",
+            "pattern_preview": "https://i.imgur.com/co0HTTm.png"
+        }
+    },
+    {
+        "model": "danflashesapi.Pattern",
+        "pk": "5",
+        "fields": {
+            "pattern_url_a": "https://i.imgur.com/ejCCwgA.png",
+            "pattern_url_b": "https://i.imgur.com/x8pHMX2.png",
+            "label": "Test Diamonds",
+            "pattern_preview": "https://i.imgur.com/NnDeFNV.png"
+        }
+    },
+    {
+        "model": "danflashesapi.Pattern",
+        "pk": "6",
+        "fields": {
+            "pattern_url_a": "https://i.imgur.com/9Hwnza3.png",
+            "pattern_url_b": "https://i.imgur.com/ADlu4GG.png",
+            "label": "Test Septa",
+            "pattern_preview": "https://i.imgur.com/HJ6z14r.png"
         }
     }
 ]
