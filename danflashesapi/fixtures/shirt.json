@@ -8,7 +8,6 @@
             "label": "Protoshirt",
             "public": true,
             "price": "1000.00",
-            "patterns": [1,2,4],
             "favorites": [1]
         }
     }
