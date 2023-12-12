@@ -12,3 +12,13 @@ class FavoriteView(ViewSet):
         favorite.save()
 
         return Response(None, status=status.HTTP_201_CREATED)
+    
+    def destroy(self, request, pk=None):
+        try: 
+            favorite = ShirtFavorite.objects.get(pk=pk)
+            favorite.delete()
+
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        
+        except ShirtFavorite.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)

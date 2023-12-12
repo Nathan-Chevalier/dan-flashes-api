@@ -114,8 +114,6 @@ class ShirtView(ViewSet):
     def destroy(self, request, pk=None):
         try:
             shirt = Shirt.objects.get(pk=pk)
-            #? Grab all shirt patterns associated with this shirt for deletion
-
             shirt.delete()
 
             return Response(status=status.HTTP_204_NO_CONTENT)
