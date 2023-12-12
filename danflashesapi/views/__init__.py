@@ -3,3 +3,4 @@ from .users import FlashesUserView
 from .shirts import ShirtView
 from .colors import ColorView
 from .patterns import PatternView
+from .favorites import FavoriteView
