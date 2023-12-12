@@ -1,7 +1,7 @@
 from rest_framework import serializers, status
 from rest_framework.response import Response
 from rest_framework.viewsets import ViewSet
-from danflashesapi.models import FlashesUser, Shirt, Pattern, ShirtPattern, Color
+from danflashesapi.models import FlashesUser, Shirt, Pattern, ShirtPattern, Color, ShirtFavorite
 
 
 class ColorSerializer(serializers.ModelSerializer):
@@ -11,8 +11,8 @@ class ColorSerializer(serializers.ModelSerializer):
 
 class FlashesFavoritesSerializer(serializers.ModelSerializer):
     class Meta:
-        model = FlashesUser
-        fields = ('id',)
+        model = ShirtFavorite
+        fields = ('id', 'flashes_user',)
 
 class FlashesUserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -36,14 +36,14 @@ class ShirtSerializer(serializers.ModelSerializer):
     flashes_user = FlashesUserSerializer(many=False)
     color = ColorSerializer(many=False)
     is_owner = serializers.SerializerMethodField()
-    favorites = FlashesFavoritesSerializer(many=True)
+    shirt_favorite = FlashesFavoritesSerializer(many=True)
 
     def get_is_owner(self, obj):
         return self.context["request"].user.id == obj.flashes_user_id
 
     class Meta:
         model = Shirt
-        fields = ('id','shirt_pattern', 'flashes_user', 'color', 'label', 'public', 'price', 'favorites', 'is_owner',)
+        fields = ('id','shirt_pattern', 'flashes_user', 'color', 'label', 'public', 'price', 'shirt_favorite', 'is_owner',)
 
 class ShirtView(ViewSet):
     def list(self, request):

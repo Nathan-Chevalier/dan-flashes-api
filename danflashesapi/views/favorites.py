@@ -1,17 +1,19 @@
 from rest_framework import serializers, status
 from rest_framework.response import Response
 from rest_framework.viewsets import ViewSet
-from danflashesapi.models import ShirtFavorite
+from danflashesapi.models import ShirtFavorite, Shirt, FlashesUser
 
 class FavoriteView(ViewSet):
 
     def create(self, request):
         favorite = ShirtFavorite()
-        favorite.shirt = request.data.get('shirt_id')
-        favorite.flashes_user = request.data.get('flashes_id')
+        pk = request.data.get('shirt_id')
+        shirt = Shirt.objects.get(pk=pk)
+        favorite.shirt = shirt
+        favorite.flashes_user = FlashesUser.objects.get(user=request.auth.user)
         favorite.save()
 
-        return Response(None, status=status.HTTP_201_CREATED)
+        return Response(None, status=status.HTTP_204_NO_CONTENT)
     
     def destroy(self, request, pk=None):
         try: 
