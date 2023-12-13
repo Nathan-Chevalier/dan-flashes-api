@@ -61,6 +61,21 @@ class ShirtView(ViewSet):
 
         return Response(shirt_serializer.data, status=status.HTTP_200_OK)
     
+    def retrieve(self, request, pk=None):
+        try:
+            shirt = Shirt.objects.get(pk=pk)
+        except Shirt.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+        
+        def sort_pattern_by_index(pattern):
+            return pattern['pattern_index']
+
+        shirt_serializer = ShirtSerializer(shirt, many=False, context={'request':request})
+        shirt_data = shirt_serializer.data
+        shirt_data['shirt_pattern'] = sorted(shirt_data['shirt_pattern'], key=sort_pattern_by_index)
+
+        return Response(shirt_data, status=status.HTTP_200_OK)
+    
     def create(self, request):
         shirt = Shirt()
         shirt.color_id = request.data.get('color')
