@@ -37,9 +37,13 @@ class ShirtSerializer(serializers.ModelSerializer):
     color = ColorSerializer(many=False)
     is_owner = serializers.SerializerMethodField()
     shirt_favorite = FlashesFavoritesSerializer(many=True)
+    price = serializers.SerializerMethodField()
 
     def get_is_owner(self, obj):
         return self.context["request"].user.id == obj.flashes_user_id
+    
+    def get_price(self, obj):
+        return int(obj.price)
 
     class Meta:
         model = Shirt
