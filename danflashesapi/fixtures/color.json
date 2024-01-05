@@ -51,7 +51,7 @@
         "model": "danflashesapi.Color",
         "pk": 7,
         "fields": {
-            "color": "8f00ff",
+            "color": "#8f00ff",
             "label": "Violet"
         }
     }
