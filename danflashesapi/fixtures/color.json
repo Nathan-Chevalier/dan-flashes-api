@@ -3,48 +3,56 @@
         "model": "danflashesapi.Color",
         "pk": 1,
         "fields": {
-            "color": "#0b0b0b",
-            "label": "Black"
+            "color": "#7c0b0b",
+            "label": "Red"
         }
     },
     {
         "model": "danflashesapi.Color",
         "pk": 2,
         "fields": {
-            "color": "#f0ead6",
-            "label": "Eggshell"
+            "color": "#b34800",
+            "label": "Orange"
         }
     },
     {
         "model": "danflashesapi.Color",
         "pk": 3,
         "fields": {
-            "color": "#00519d",
-            "label": "Blue"
+            "color": "#938300",
+            "label": "Yellow"
         }
     },
     {
         "model": "danflashesapi.Color",
         "pk": 4,
         "fields": {
-            "color": "#9d4a00",
-            "label": "Orange"
+            "color": "#007700",
+            "label": "Green"
         }
     },
     {
         "model": "danflashesapi.Color",
         "pk": 5,
         "fields": {
-            "color": "#9d0089",
-            "label": "Pink"
+            "color": "#0b407c",
+            "label": "Blue"
         }
     },
     {
         "model": "danflashesapi.Color",
         "pk": 6,
         "fields": {
-            "color": "#742622",
-            "label": "Red"
+            "color": "#4b0082",
+            "label": "Indigo"
+        }
+    },
+    {
+        "model": "danflashesapi.Color",
+        "pk": 7,
+        "fields": {
+            "color": "8f00ff",
+            "label": "Violet"
         }
     }
 ]
