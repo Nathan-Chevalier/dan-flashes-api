@@ -1,6 +1,7 @@
 from rest_framework import serializers, status
 from rest_framework.response import Response
 from rest_framework.viewsets import ViewSet
+from rest_framework.permissions import AllowAny
 from danflashesapi.models import FlashesUser, Shirt, Pattern, ShirtPattern, Color, ShirtFavorite
 
 
@@ -50,6 +51,15 @@ class ShirtSerializer(serializers.ModelSerializer):
         fields = ('id','shirt_pattern', 'flashes_user', 'color', 'label', 'public', 'price', 'shirt_favorite', 'is_owner',)
 
 class ShirtView(ViewSet):
+    def get_permissions(self):
+        """
+        Instantiates and returns the list of permissions that this view requires.
+        """
+        # If the request is a GET request, allow any user to access this view
+        if self.request.method == 'GET':
+            return [AllowAny()]
+        return super().get_permissions()
+
     def list(self, request):
         shirts = Shirt.objects.all()
 
