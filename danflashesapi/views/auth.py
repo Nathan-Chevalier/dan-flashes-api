@@ -49,9 +49,7 @@ def register_user(request):
     # on Django's built-in User model
     new_user = User.objects.create_user(
         username=request.data['email'],
-        password=request.data['password'],
-        first_name=request.data['first_name'],
-        last_name=request.data['last_name']
+        password=request.data['password']
     )
 
     new_flashes_user = FlashesUser()
@@ -61,6 +59,6 @@ def register_user(request):
     new_flashes_user.save()
 
     token = Token.objects.create(user=new_user)
-
-    data = { 'token': token.key}
+    user = FlashesUser.objects.get(user=new_user)
+    data = { 'token': token.key, 'user_id': user.id }
     return Response(data)
