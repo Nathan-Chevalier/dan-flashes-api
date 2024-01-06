@@ -59,6 +59,6 @@ def register_user(request):
     new_flashes_user.save()
 
     token = Token.objects.create(user=new_user)
-
-    data = { 'token': token.key}
+    user = FlashesUser.objects.get(user=new_user)
+    data = { 'token': token.key, 'user_id': user.id }
     return Response(data)
