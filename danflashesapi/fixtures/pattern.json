@@ -3,60 +3,100 @@
         "model": "danflashesapi.Pattern",
         "pk": "1",
         "fields": {
-            "pattern_url_a": "https://i.imgur.com/aLma1M9.png",
-            "pattern_url_b": "https://i.imgur.com/o0NP5ll.png",
-            "label": "Test Circular",
-            "pattern_preview": "https://i.imgur.com/kOcN3A8.png"
+            "pattern_url_a": "https://i.imgur.com/rDuUH0I.png",
+            "pattern_url_b": "https://i.imgur.com/llOB6qj.png",
+            "label": "Hippodrome Warlock",
+            "pattern_preview": "https://i.imgur.com/Fn8KXvV.png"
         }
     },
     {
         "model": "danflashesapi.Pattern",
         "pk": "2",
         "fields": {
-            "pattern_url_a": "https://i.imgur.com/iIVkTpl.png",
-            "pattern_url_b": "https://i.imgur.com/BvGK5Jq.png",
-            "label": "Test Pentagonal",
-            "pattern_preview": "https://i.imgur.com/LphEn95.png"
+            "pattern_url_a": "https://i.imgur.com/oGtBcxV.png",
+            "pattern_url_b": "https://i.imgur.com/vWrXx8m.png",
+            "label": "Fleur Complexe",
+            "pattern_preview": "https://i.imgur.com/K9k71P9.png"
         }
     },
     {
         "model": "danflashesapi.Pattern",
         "pk": "3",
         "fields": {
-            "pattern_url_a": "https://i.imgur.com/7FW2Tjn.png",
-            "pattern_url_b": "https://i.imgur.com/p9D4TMO.png",
-            "label": "Test Rectangles",
-            "pattern_preview": "https://i.imgur.com/8K6TiGS.png"
+            "pattern_url_a": "https://i.imgur.com/6qXMIxE.png",
+            "pattern_url_b": "https://i.imgur.com/LfG4bWb.png",
+            "label": "Mobo Lobo",
+            "pattern_preview": "https://i.imgur.com/Si1XVj2.png"
         }
     },
     {
         "model": "danflashesapi.Pattern",
         "pk": "4",
         "fields": {
-            "pattern_url_a": "https://i.imgur.com/gDMLpql.png",
-            "pattern_url_b": "https://i.imgur.com/pTL269J.png",
-            "label": "Test Triangles",
-            "pattern_preview": "https://i.imgur.com/co0HTTm.png"
+            "pattern_url_a": "https://i.imgur.com/CzWgJc7.png",
+            "pattern_url_b": "https://i.imgur.com/ctvd3DF.png",
+            "label": "Kong Fireball",
+            "pattern_preview": "https://i.imgur.com/qow9x3p.png"
         }
     },
     {
         "model": "danflashesapi.Pattern",
         "pk": "5",
         "fields": {
-            "pattern_url_a": "https://i.imgur.com/ejCCwgA.png",
-            "pattern_url_b": "https://i.imgur.com/x8pHMX2.png",
-            "label": "Test Diamonds",
-            "pattern_preview": "https://i.imgur.com/NnDeFNV.png"
+            "pattern_url_a": "https://i.imgur.com/6CWiDhO.png",
+            "pattern_url_b": "https://i.imgur.com/DETEPY5.png",
+            "label": "Tyre Trax",
+            "pattern_preview": "https://i.imgur.com/gMXYKod.png"
         }
     },
     {
         "model": "danflashesapi.Pattern",
         "pk": "6",
         "fields": {
-            "pattern_url_a": "https://i.imgur.com/9Hwnza3.png",
-            "pattern_url_b": "https://i.imgur.com/ADlu4GG.png",
-            "label": "Test Septa",
-            "pattern_preview": "https://i.imgur.com/HJ6z14r.png"
+            "pattern_url_a": "https://i.imgur.com/kbu9pdN.png",
+            "pattern_url_b": "https://i.imgur.com/wAbjwwE.png",
+            "label": "Sea Net",
+            "pattern_preview": "https://i.imgur.com/YP67ih1.png"
+        }
+    },
+    {
+        "model": "danflashesapi.Pattern",
+        "pk": "7",
+        "fields": {
+            "pattern_url_a": "https://i.imgur.com/kbu9pdN.png",
+            "pattern_url_b": "https://i.imgur.com/wAbjwwE.png",
+            "label": "Sea Net",
+            "pattern_preview": "https://i.imgur.com/YP67ih1.png"
+        }
+    },
+    {
+        "model": "danflashesapi.Pattern",
+        "pk": "8",
+        "fields": {
+            "pattern_url_a": "https://i.imgur.com/t2yTKxI.png",
+            "pattern_url_b": "https://i.imgur.com/JNI33XC.png",
+            "label": "Flashes Favorite",
+            "pattern_preview": "https://i.imgur.com/YUDtn1p.png"
+        }
+    },
+    {
+        "model": "danflashesapi.Pattern",
+        "pk": "9",
+        "fields": {
+            "pattern_url_a": "https://i.imgur.com/6IDjWgv.png",
+            "pattern_url_b": "https://i.imgur.com/chXeSq7.png",
+            "label": "Math Whiz",
+            "pattern_preview": "https://i.imgur.com/Iyk3yKy.png"
+        }
+    },
+    {
+        "model": "danflashesapi.Pattern",
+        "pk": "10",
+        "fields": {
+            "pattern_url_a": "https://i.imgur.com/fAQ6wXs.png",
+            "pattern_url_b": "https://i.imgur.com/mCKmqWS.png",
+            "label": "Cortex Cooler",
+            "pattern_preview": "https://i.imgur.com/xJogdM2.png"
         }
     }
 ]
