@@ -43,6 +43,7 @@ class ShirtSerializer(serializers.ModelSerializer):
     def get_is_owner(self, obj):
         return self.context["request"].user.id == obj.flashes_user_id
     
+    # Returning an integer instead of a float for price
     def get_price(self, obj):
         return int(obj.price)
 
@@ -53,9 +54,8 @@ class ShirtSerializer(serializers.ModelSerializer):
 class ShirtView(ViewSet):
     def get_permissions(self):
         """
-        Instantiates and returns the list of permissions that this view requires.
+        Permission override for GET requests, does not require token
         """
-        # If the request is a GET request, allow any user to access this view
         if self.request.method == 'GET':
             return [AllowAny()]
         return super().get_permissions()
@@ -63,13 +63,14 @@ class ShirtView(ViewSet):
     def list(self, request):
         shirts = Shirt.objects.all()
 
-        #? Helper function to sort the shirt_pattern list of dictionaries by pattern_index in the serialized return
+            # Helper function to sort each instance of the pattern by its pattern index
+            # Iterates through pattern dictionary and extracts the pattern index
         def sort_pattern_by_index(pattern):
             return pattern['pattern_index']
 
         shirt_serializer = ShirtSerializer(shirts, many=True, context={'request':request})
 
-        #? Uses the helper function to sort
+        #? Uses the helper function to sort via pattern index
         for shirt_data in shirt_serializer.data:
             shirt_data['shirt_pattern'] = sorted(shirt_data['shirt_pattern'], key=sort_pattern_by_index)
 

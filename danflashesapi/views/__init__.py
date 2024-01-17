@@ -4,3 +4,4 @@ from .shirts import ShirtView
 from .colors import ColorView
 from .patterns import PatternView
 from .favorites import FavoriteView
+from .myShirts import MyShirtView
