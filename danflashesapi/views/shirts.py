@@ -101,15 +101,13 @@ class ShirtView(ViewSet):
         shirt.save()
         #? Get the patterns dictionaries
         patterns_data = request.data.get('patterns', [])
-        #? Extract the pattern_id foreign keys to associate with the shirt and set them
-        pattern_ids = [pattern.get('pattern_id') for pattern in patterns_data]
-        shirt.patterns.set(pattern_ids)
-        #? Loop through the pattern dictionaries to pull pattern_index and associate it with the correct entry on the ShirtPattern join table.
+
         for pattern in patterns_data:
-            shirt_pattern = ShirtPattern.objects.get(shirt__id=shirt.id, pattern__id=pattern['pattern_id'])
-            index = pattern['pattern_index']
-            shirt_pattern.pattern_index = index
-            shirt_pattern.save()
+            #? Creates ShirtPattern objects to associate Shirt, Pattern, and Pattern index
+            pattern_id = pattern.get('pattern_id')
+            pattern_index = pattern.get('pattern_index')
+            ShirtPattern.objects.create(shirt=shirt, pattern_id=pattern_id, pattern_index=pattern_index)
+
         
         serializer = ShirtSerializer(shirt, context={'request': request})
         return Response(serializer.data, status=status.HTTP_201_CREATED)
